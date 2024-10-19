@@ -47,7 +47,7 @@ const about = (props) => {
                 About Me...
               </h2>
               <p className="font-medium sm:text-base">
-                - Hi, I'm Bhavya Kalra, Proactive, collaborative, and
+                - Hi, I&apos;m Bhavya Kalra, Proactive, collaborative, and
                 user-oriented Full Stack web developer with 3+ years of
                 experience leveraging programming skills to deliver custom
                 software solutions to support company goals. Efficient team

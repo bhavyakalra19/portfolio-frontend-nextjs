@@ -39,6 +39,7 @@ const index = ({ data }) => {
             {data[0].articleData &&
               data[0].articleData.map((step) => (
                 <ArticleDetail
+                  key={step.step}
                   image={step.image}
                   heading={step.heading}
                   desc={step.description}
