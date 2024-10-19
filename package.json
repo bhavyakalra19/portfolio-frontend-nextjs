@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "clsx": "^2.1.1",
+    "classnames": "^2.5.1",
     "copy-to-clipboard": "^3.3.3",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
