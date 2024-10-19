@@ -20,7 +20,7 @@ const ArticleDetail = ({image, heading, desc}) => {
       </div>
       <div className="w-full h-auto flex flex-col items-start justify-start overflow-hidden m-10 md:m-5 sm:m-0 md:justify-center md:items-center">
         <p className="font-semibold mb-4 text-2xl">{heading}</p>
-        {image && <img src={image} className="w-2/3 h-auto sm:w-full" />}
+        {image && <img src={image} alt="article" className="w-2/3 h-auto sm:w-full" />}
         {desc && <div className="p-6 mb-10 sm:p-2 font-Montserrat sm:text-xs">
           {parse(desc)}
         </div>}
