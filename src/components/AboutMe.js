@@ -1,4 +1,3 @@
-import React from "react";
 import circleImage from "../../public/circleTrans.png";
 import Image from "next/image";
 import Link from "next/link";
