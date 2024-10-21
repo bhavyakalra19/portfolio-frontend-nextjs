@@ -51,7 +51,7 @@ const about = (props) => {
                 user-oriented Full Stack web developer with 3+ years of
                 experience leveraging programming skills to deliver custom
                 software solutions to support company goals. Efficient team
-                player with C+ and C++ proficiencies, track record of
+                player with proficiencies in multiple tech stack, track record of
                 collaborating via Git / GitHub, and ability to work
                 independently or as part of a team to complete development tasks
                 while meeting delivery deadlines.
@@ -59,7 +59,7 @@ const about = (props) => {
               <p className="font-medium mt-4 sm:text-base">
                 - Proficient in frontend technologies (HTML, CSS, JavaScript)
                 and backend languages (Python, C++, PHP), with expertise in web
-                frameworks like ReactJs, NextJs and Django. Adept at database
+                frameworks like ReactJs, NextJs, DRF and Django. Adept at database
                 management using MySQL. Proven track record of optimizing web
                 performance and improving user experience, resulting in a 20%
                 increase in customer engagement. Strong communicator and team

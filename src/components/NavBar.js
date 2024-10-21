@@ -55,9 +55,9 @@ const NavBar = () => {
     const data =
       mode === "dark"
         ? "light"
-        : window.localStorage.getItem("theme") === "dark"
-        ? "light"
-        : "dark";
+        : window.localStorage.getItem("theme") === "light"
+        ? "dark"
+        : "light";
     setMode(data);
     setMessage(data);
   };
