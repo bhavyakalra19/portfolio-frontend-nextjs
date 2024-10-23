@@ -49,7 +49,7 @@ export default function Home() {
               </div>
               <AnimatedText
                 text="Welcome, to my portfolio website. Explore my latest study, articles and projects showcasing my expertise in full stack development. This website is backed with django and most of it's content is configurable through django admin."
-                className="!text-xl font-medium my-6 xl:!text-5xl lg:text-center lg:!text-4xl md:!text-2xl sm:!text-xl"
+                className="!text-xl font-pacifico italic my-6 xl:!text-5xl lg:text-center lg:!text-4xl md:!text-2xl sm:!text-xl"
               />
               <div className="flex items-center mt-2">
                 <Link
@@ -62,7 +62,7 @@ export default function Home() {
                 </Link>
                 <button
                   onClick={copyToClipBoard}
-                  className="ml-4 text-lg font-medium capitalize text-dark underline dark:text-light"
+                  className="ml-4 text-lg font-pacifico italic capitalize text-dark underline dark:text-light"
                 >
                   Copy Email
                 </button>
@@ -70,7 +70,7 @@ export default function Home() {
               {showCopyText === "" ? undefined : (
                 <AnimatedText
                   text={showCopyText}
-                  className=" !text-xs font-medium mt-6 dark:text-light text-dark z-10 "
+                  className=" !text-xs font-pacifico italic mt-6 dark:text-light text-dark z-10 "
                 />
               )}
               <div className="inline-block w-[200px] z-10">

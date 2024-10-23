@@ -20,6 +20,7 @@ module.exports = {
         mont: ["var(--font-mont)", ...fontFamily.sans],
         Montserrat: ["Montserrat"],
         grand: ["Grandslang roman"],
+        pacifico: ['Pacifico', 'cursive'],
       },
       colors: {
         dark: "#1b1b1b",

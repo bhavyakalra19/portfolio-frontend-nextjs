@@ -30,7 +30,7 @@ const FeaturedProject = ({ type, title, summary, img, link }) => {
         />
       </Link>
       <div className="w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6">
-        <span className="text-primary font-medium text-xl dark:text-primaryDark xs:text-base">
+        <span className="text-primary font-pacifico italic text-xl dark:text-primaryDark xs:text-base">
           {type}
         </span>
         <Link
@@ -42,7 +42,7 @@ const FeaturedProject = ({ type, title, summary, img, link }) => {
             {title}
           </h2>
         </Link>
-        <p className="my-2 font-medium text-dark dark:text-light sm:text-[fontSize: 5px]">
+        <p className="my-2 font-pacifico italic text-dark dark:text-light sm:text-[fontSize: 5px]">
           {summary}
         </p>
         <div className="mt-2 flex items-center">
@@ -85,7 +85,7 @@ const Project = ({ title, type, img, link, summary }) => {
           />
         </Link>
         <div className="w-full flex flex-col items-start justify-between mt-4 sm:items-center">
-          <span className="text-primary font-medium text-xl dark:text-primaryDark lg:text-lg md:text-base sm:text-xs">
+          <span className="text-primary font-pacifico italic text-xl dark:text-primaryDark lg:text-lg md:text-base sm:text-xs">
             {type}
           </span>
           <Link
@@ -97,7 +97,7 @@ const Project = ({ title, type, img, link, summary }) => {
               {title}
             </h2>
           </Link>
-          <p className="my-2 font-medium text-dark dark:text-light sm:text-xs sm:hidden">
+          <p className="my-2 font-pacifico italic text-dark dark:text-light sm:text-xs sm:hidden">
             {summary}
           </p>
         </div>

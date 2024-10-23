@@ -46,7 +46,7 @@ const about = (props) => {
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">
                 About Me...
               </h2>
-              <p className="font-medium sm:text-base">
+              <p className="font-pacifico italic sm:text-base">
                 - Hi, I&apos;m Bhavya Kalra, Proactive, collaborative, and
                 user-oriented Full Stack web developer with 3+ years of
                 experience leveraging programming skills to deliver custom
@@ -56,7 +56,7 @@ const about = (props) => {
                 independently or as part of a team to complete development tasks
                 while meeting delivery deadlines.
               </p>
-              <p className="font-medium mt-4 sm:text-base">
+              <p className="font-pacifico italic mt-4 sm:text-base">
                 - Proficient in frontend technologies (HTML, CSS, JavaScript)
                 and backend languages (Python, C++, PHP), with expertise in web
                 frameworks like ReactJs, NextJs, DRF and Django. Adept at database
@@ -81,7 +81,7 @@ const about = (props) => {
                 <span className="inline-block text-7xl font-bold text-end md:text-6xl sm:text-5xl xs:text-4xl">
                   <AnimatedNumbers value={3} />+
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base  xs:text-sm">
+                <h2 className="text-xl font-pacifico italic capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base  xs:text-sm">
                   Years of Exp.
                 </h2>
               </div>
@@ -89,7 +89,7 @@ const about = (props) => {
                 <span className="inline-block text-7xl font-bold text-end md:text-6xl sm:text-5xl xs:text-4xl">
                   <AnimatedNumbers value={10} />+
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base  xs:text-sm">
+                <h2 className="text-xl font-pacifico italic capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base  xs:text-sm">
                   Projects
                 </h2>
               </div>
@@ -97,7 +97,7 @@ const about = (props) => {
                 <span className="inline-block text-7xl font-bold text-end md:text-6xl sm:text-5xl xs:text-4xl">
                   <AnimatedNumbers value={20} />+
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base  xs:text-sm">
+                <h2 className="text-xl font-pacifico italic capitalize text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base  xs:text-sm">
                   Tech. used
                 </h2>
               </div>

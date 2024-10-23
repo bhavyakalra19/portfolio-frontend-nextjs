@@ -31,7 +31,7 @@ const index = ({ data }) => {
                 />
               )}
               {data[0].description && (
-                <p className="p-6 m-10 sm:p-0 sm:mt-10 sm:m-0 font-Montserrat font-semibold sm:w-full md:!text-2xl sm:!text-lg xs:!text-sm">
+                <p className="p-6 m-10 sm:p-0 sm:mt-10 sm:m-0 font-pacifico italic font-semibold sm:w-full md:!text-2xl sm:!text-lg xs:!text-sm">
                   {data[0].description}
                 </p>
               )}
@@ -47,8 +47,8 @@ const index = ({ data }) => {
               ))}
             <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
             <div className="flex justify-between sm:text-xs md:text-base text-xl">
-              <div>Bhavya Kalra</div>
-              <div>{data[0].created_date}</div>
+              <div className="font-pacifico italic">Bhavya Kalra</div>
+              <div className="font-pacifico italic">{data[0].created_date}</div>
             </div>
           </div>
           <div className="col-span-10 m-10 sm:m-5">
