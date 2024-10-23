@@ -5,15 +5,13 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React, { Suspense, useState } from "react";
-import project1 from "../../public/images/projects/crypto-screener-cover-image.jpg";
-import project2 from "../../public/images/projects/devdreaming.jpg";
 import project3 from "../../public/images/profile/mainImg2.png";
 import { motion } from "framer-motion";
 import TransitionEffect from "@/components/TransitionEffect";
 
 const FramerImage = motion(Image);
 
-const FeaturedProject = ({ type, title, summary, img, link, hostUrl }) => {
+const FeaturedProject = ({ type, title, summary, img, link }) => {
   return (
     <article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-gray-200 shadow-black shadow-2xl p-12 relative dark:bg-dark dark:border-light lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4">
       <div className="absolute top-0 -right-4 -z-10 w-[101%] h-[103%] rounded-3xl bg-dark dark:bg-light xs:-right-2 sm:h-[102%] xs:w-full xs:rounded-[1.5rem]" />
@@ -25,7 +23,7 @@ const FeaturedProject = ({ type, title, summary, img, link, hostUrl }) => {
         <motion.img
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
-          src={`${hostUrl}${img}`}
+          src={img}
           alt={title}
           className="w-full h-auto"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
@@ -64,7 +62,7 @@ const FeaturedProject = ({ type, title, summary, img, link, hostUrl }) => {
   );
 };
 
-const Project = ({ title, type, img, link, summary, hostUrl }) => {
+const Project = ({ title, type, img, link, summary }) => {
   return (
     <motion.article
       initial={{ x: -50 }}
@@ -81,7 +79,7 @@ const Project = ({ title, type, img, link, summary, hostUrl }) => {
           <motion.img
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
-            src={`${hostUrl}${img}`}
+            src={img}
             alt={title}
             className="w-full h-auto"
           />
@@ -119,8 +117,7 @@ const Project = ({ title, type, img, link, summary, hostUrl }) => {
   );
 };
 
-const CreateProjectData = ({ data, hostUrl }) => {
-  console.log(hostUrl);
+const CreateProjectData = ({ data }) => {
   return (
     <div className="grid grid-cols-12 gap-[4rem] gap-y-32 xl:gap-x-16 lg:gap-x-9 md:gap-y-24 sm:gap-x-0">
       {data.map((project, counterIncrement) =>
@@ -142,7 +139,6 @@ const CreateProjectData = ({ data, hostUrl }) => {
               link={project.gitLink}
               type="Featured Project"
               img={project.gitImage}
-              hostUrl={hostUrl}
             />
           </div>
         ) : (
@@ -153,7 +149,6 @@ const CreateProjectData = ({ data, hostUrl }) => {
               link={project.gitLink}
               type="Basic Project"
               img={project.gitImage}
-              hostUrl={hostUrl}
             />
           </div>
         )
@@ -177,7 +172,7 @@ const projects = (props) => {
           />
           <Suspense>
             {props && (
-              <CreateProjectData data={props.data} hostUrl={props.hostUrl} />
+              <CreateProjectData data={props.data} />
             )}
           </Suspense>
         </Layout>
@@ -193,7 +188,7 @@ export async function getServerSideProps() {
   if (res.ok) {
     const data = await res.json();
     return {
-      props: { data: data, hostUrl: hostUrl },
+      props: { data: data },
     };
   } else {
     return {

@@ -74,7 +74,6 @@ export async function getStaticPaths() {
       };
       pathData.push(currData);
     }
-    console.log(pathData);
     return {
       fallback: false,
       paths: pathData,

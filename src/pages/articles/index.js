@@ -98,7 +98,7 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
   8;
 };
 
-const Articles = ({ data, hostUrl }) => {
+const Articles = ({ data }) => {
   let featuredData = [];
   let basicData = [];
   for (let a = 0; a < data.length; a++) {
@@ -122,7 +122,7 @@ const Articles = ({ data, hostUrl }) => {
           />
           {featuredData.length > 0 && (
             <ul className="grid grid-cols-2 gap-16 lg:grid-cols-1 md:grid-cols-1 md:gap-y-16">
-              {featuredData.map((article) => <FeaturedArticle key={article.name} title={article.name} summary={article.description} time={article.created_date} link={`/articles/${article.slug}`} img={article.mainImage} hostUrl={hostUrl} />)}
+              {featuredData.map((article) => <FeaturedArticle key={article.name} title={article.name} summary={article.description} time={article.created_date} link={`/articles/${article.slug}`} img={article.mainImage} />)}
             </ul>
           )}
           {basicData.length > 0 && (
@@ -131,7 +131,7 @@ const Articles = ({ data, hostUrl }) => {
                 All Articles
               </h2>
               <ul>
-                {basicData.map((article) => <Article key={article.name} title={article.name} img={article.mainImage} date={article.created_date} link={`/articles/${article.slug}`} hostUrl={hostUrl} />)}
+                {basicData.map((article) => <Article key={article.name} title={article.name} img={article.mainImage} date={article.created_date} link={`/articles/${article.slug}`} />)}
               </ul>
             </>
           )}
@@ -148,7 +148,7 @@ export async function getServerSideProps() {
   if (res.ok) {
     const data = await res.json();
     return {
-      props: { data: data, hostUrl: hostUrl },
+      props: { data: data },
     };
   } else {
     return {
