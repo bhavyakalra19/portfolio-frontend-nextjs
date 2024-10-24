@@ -12,7 +12,7 @@ const Footer = () => {
           Python, Django, NextJs, Framer Motion, Tailwindcss
         </div>
         <Link
-          className="p-1 mt-5 rounded-full bg-gradient-to-r sm:text-base xs:text-xs from-blue-400 to-purple-900 hover:from-pink-500 hover:to-orange-50 text-light"
+          className="p-2 mt-5 rounded-full bg-gradient-to-r sm:text-base xs:text-xs from-blue-400 to-purple-900 hover:from-pink-500 hover:to-orange-50 text-light"
           href="mailto:bkbkbhavyakalra@gmail.com"
         >
           Contact Me
