@@ -25,7 +25,7 @@ const Details = ({ grade, school, schoolLink, time, address }) => {
             @{school}
           </a>
         </h3>
-        <span className="capitalize font-pacifico italic text-dark/75 dark:text-light/75 md:text-sm">
+        <span className="capitalize font-pacifico text-dark/75 dark:text-light/75 md:text-sm">
           {time} | {address}
         </span>
       </motion.div>
