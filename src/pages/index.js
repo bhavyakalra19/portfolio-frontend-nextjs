@@ -53,7 +53,7 @@ export default function Home() {
               />
               <div className="flex items-center mt-2">
                 <Link
-                  href="/dummy.pdf"
+                  href="https://bhavya-django-portfolio.s3.us-east-2.amazonaws.com/resume/bhavyaKalraResume.pdf"
                   target={"_blank"}
                   download={true}
                   className="flex items-center hover:dark:bg-dark hover:dark:text-light hover:dark:border-light bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark dark:bg-light dark:text-dark"
