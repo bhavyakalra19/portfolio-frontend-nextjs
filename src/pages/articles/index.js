@@ -143,7 +143,7 @@ const Articles = ({ data }) => {
 
 export async function getServerSideProps() {
   //fetch data for a single meetup
-  const hostUrl = process.env.backend_url;
+  const hostUrl = process.env.NEXT_PUBLIC_backend_url;
   const res = await fetch(`${hostUrl}/api/article-list/`);
   if (res.ok) {
     const data = await res.json();

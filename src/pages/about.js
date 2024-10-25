@@ -121,7 +121,7 @@ const about = (props) => {
 
 export async function getServerSideProps(){
   //fetch data for a single meetup
-  const res = await fetch(`${process.env.backend_url}/api/skills-list/`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_backend_url}/api/skills-list/`);
   if(res.ok){
     const data = await res.json()
     return {

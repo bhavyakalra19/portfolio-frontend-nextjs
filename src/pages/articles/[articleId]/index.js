@@ -1,15 +1,39 @@
-import React from "react";
+'use client';
+import React, { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import AnimatedText from "@/components/AnimatedText";
 import ArticleDetail from "@/components/ArticleDetail";
-import { notFound } from "next/navigation";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
-const index = ({ data }) => {
+const index = () => {
+  // const [articleId, setArticleId] = useState();
+  const params = useParams();
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const articleId = params.articleId
+      const hostUrl = process.env.NEXT_PUBLIC_backend_url;
+      const response = await fetch(`${hostUrl}/api/article-data/${articleId}/`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const result = await response.json();
+      console.log(result)
+      setData(result);
+    };
+
+    fetchData().catch((e) => {
+      // handle the error as needed
+      console.error("An error occurred while fetching the data: ", e);
+    });
+  }, [params]);
+
   if (!data) {
     return (
       <main className="flex h-screen flex-col items-center justify-center dark:text-light">
-        <div className="flex justify-center items-center">No Article Found</div>
+        <div className="flex justify-center items-center">Loading...</div>
       </main>
     );
   }
@@ -27,6 +51,7 @@ const index = ({ data }) => {
               {data[0].mainImage && (
                 <img
                   src={data[0].mainImage}
+                  alt="main image"
                   className="w-2/3 sm:w-full h-auto border border-gray-500 shadow-xl shadow-black dark:shadow-light"
                 />
               )}
@@ -52,7 +77,9 @@ const index = ({ data }) => {
             </div>
           </div>
           <div className="col-span-10 m-10 sm:m-5">
-            <Link href="/articles" className="text-blue-600">← Back to Articles...</Link>
+            <Link href="/articles" className="text-blue-600">
+              ← Back to Articles...
+            </Link>
           </div>
         </div>
       </Layout>
@@ -60,46 +87,46 @@ const index = ({ data }) => {
   );
 };
 
-export async function getStaticPaths() {
-  const hostUrl = process.env.backend_url;
-  const res = await fetch(`${hostUrl}/api/artcles-slug-list/`);
-  if (res.ok) {
-    const data = await res.json();
-    const pathData = [];
-    for (let index = 0; index < data.length; index++) {
-      const currData = {
-        params: {
-          articleId: data[index]["slug"],
-        },
-      };
-      pathData.push(currData);
-    }
-    return {
-      fallback: false,
-      paths: pathData,
-    };
-  } else {
-    return {
-      fallback: false,
-      paths: null,
-    };
-  }
-}
+// export async function getStaticPaths() {
+//   const hostUrl = process.env.backend_url;
+//   const res = await fetch(`${hostUrl}/api/artcles-slug-list/`);
+//   if (res.ok) {
+//     const data = await res.json();
+//     const pathData = [];
+//     for (let index = 0; index < data.length; index++) {
+//       const currData = {
+//         params: {
+//           articleId: data[index]["slug"],
+//         },
+//       };
+//       pathData.push(currData);
+//     }
+//     return {
+//       fallback: false,
+//       paths: pathData,
+//     };
+//   } else {
+//     return {
+//       fallback: false,
+//       paths: null,
+//     };
+//   }
+// }
 
-export async function getStaticProps(context) {
-  //fetch data for a single meetup
-  const articleId = context.params.articleId;
-  const hostUrl = process.env.backend_url;
-  const res = await fetch(`${hostUrl}/api/article-data/${articleId}/`);
-  if (res.ok) {
-    const data = await res.json();
-    return {
-      props: { data: data },
-    };
-  } else {
-    return {
-      props: { data: null },
-    };
-  }
-}
+// export async function getStaticProps(context) {
+//   //fetch data for a single meetup
+//   const articleId = context.params.articleId;
+//   const hostUrl = process.env.backend_url;
+//   const res = await fetch(`${hostUrl}/api/article-data/${articleId}/`);
+//   if (res.ok) {
+//     const data = await res.json();
+//     return {
+//       props: { data: data },
+//     };
+//   } else {
+//     return {
+//       props: { data: null },
+//     };
+//   }
+// }
 export default index;
