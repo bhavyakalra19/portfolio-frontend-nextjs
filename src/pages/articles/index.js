@@ -55,10 +55,21 @@ const Article = ({ img, title, date, link }) => {
       whileInView={{ y: 0, transition: { duration: 0.5, ease: easeInOut } }}
       className="relative w-full p-4 py-6 my-4 rounded-xl flex flex-row sm:flex-col items-center justify-between bg-light text-dark dark:text-light first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:bg-dark dark:border-light"
     >
-      <motion.img title={title} src={img} link={link} />
-      <span className="text-primary font-semibold pl-4 dark:text-primaryDark sm:self-start sm:pl-0 xs:text-sm">
+      <Link href={link}>
+        <h2 className="capitalize text-lg font-pacifico my-2 mt-4 hover:underline xs:text-lg">
+          {title}
+        </h2>
+      </Link>
+      {/* <span className="text-primary font-semibold pl-4 dark:text-primaryDark sm:self-start sm:pl-0 xs:text-sm">
         {date}
-      </span>
+      </span> */}
+      <Link
+          href={link}
+          target={"_blank"}
+          className="ml-4 bg-dark text-light p-1 sm:px-2 sm:ml-0 px-6 font-semibold rounded-2xl dark:bg-light dark:text-dark border border-solid dark:border-light text-base sm:text-xs items-center"
+        >
+          Visit
+        </Link>
     </motion.li>
   );
 };
@@ -92,6 +103,7 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
         <span className="text-primary font-semibold font-pacifico pl-4 dark:text-primaryDarks">
           {time}
         </span>
+      
       </div>
     </li>
   );
@@ -122,7 +134,16 @@ const Articles = ({ data }) => {
           />
           {featuredData.length > 0 && (
             <ul className="grid grid-cols-2 gap-16 lg:grid-cols-1 md:grid-cols-1 md:gap-y-16">
-              {featuredData.map((article) => <FeaturedArticle key={article.name} title={article.name} summary={article.description} time={article.created_date} link={`/articles/${article.slug}`} img={article.mainImage} />)}
+              {featuredData.map((article) => (
+                <FeaturedArticle
+                  key={article.name}
+                  title={article.name}
+                  summary={article.description}
+                  time={article.created_date}
+                  link={`/articles/${article.slug}`}
+                  img={article.mainImage}
+                />
+              ))}
             </ul>
           )}
           {basicData.length > 0 && (
@@ -131,7 +152,15 @@ const Articles = ({ data }) => {
                 All Articles
               </h2>
               <ul>
-                {basicData.map((article) => <Article key={article.name} title={article.name} img={article.mainImage} date={article.created_date} link={`/articles/${article.slug}`} />)}
+                {basicData.map((article) => (
+                  <Article
+                    key={article.name}
+                    title={article.name}
+                    img={article.mainImage}
+                    date={article.created_date}
+                    link={`/articles/${article.slug}`}
+                  />
+                ))}
               </ul>
             </>
           )}
