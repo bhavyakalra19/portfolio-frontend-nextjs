@@ -65,7 +65,6 @@ const Article = ({ img, title, date, link }) => {
       </span> */}
       <Link
           href={link}
-          target={"_blank"}
           className="ml-4 bg-dark text-light p-1 sm:px-2 sm:ml-0 px-6 font-semibold rounded-2xl dark:bg-light dark:text-dark border border-solid dark:border-light text-base sm:text-xs items-center"
         >
           Visit
@@ -103,7 +102,12 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
         <span className="text-primary font-semibold font-pacifico pl-4 dark:text-primaryDarks">
           {time}
         </span>
-      
+        <Link
+          href={link}
+          className="ml-4 bg-dark text-light p-1 sm:px-2 sm:ml-4 sm:ml-0 px-6 font-semibold rounded-2xl dark:bg-light dark:text-dark border border-solid dark:border-light text-base sm:text-xs items-center"
+        >
+          Visit
+        </Link>
       </div>
     </li>
   );

@@ -56,7 +56,7 @@ const index = () => {
                 />
               )}
               {data[0].description && (
-                <p className="p-6 m-10 sm:p-0 sm:mt-10 sm:m-0 font-pacifico font-semibold sm:w-full md:!text-2xl sm:!text-lg xs:!text-sm">
+                <p className="p-6 m-10 sm:p-0 sm:mt-10 sm:m-0 font-pacifico text-2xl font-semibold sm:w-full md:!text-2xl sm:!text-lg xs:!text-sm">
                   {data[0].description}
                 </p>
               )}

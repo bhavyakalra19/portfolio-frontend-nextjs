@@ -108,10 +108,10 @@ const about = (props) => {
         <Experience />
         <Education />
         <div id="contact-form" className="w-full flex flex-col items-center justify-center mb-32">
-          <h2 className="w-[60%] sm:w-full text-5xl text-center font-grand md:text-4xl sm:text-3xl xs:text-2xl">
-            There is nothing so useless as doing efficiently that which should not be done at all.
+          <h2 className="w-[60%] sm:w-full text-4xl text-center font-grand md:text-4xl sm:text-3xl xs:text-2xl">
+            Ever Tried Ever Failed... NO MATTER Try Again Fail Again Fail Better...
           </h2>  
-          <p className="sm:text-xs">- Peter Drucker</p>   
+          <p className="sm:text-xs mt-4">- SAMUEL BECKETT</p>   
         </div>
       </main>
     </>
